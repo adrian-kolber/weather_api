@@ -1,4 +1,9 @@
-from services.openwather_api import get_weather
+import time
+from services.openweather_api import get_weather
+from services.excel_files import save_file
 
-weather_record = get_weather()
-get_weather()
+while True:
+    weather_record = get_weather()
+    save_file([weather_record])
+    print("Pobrano informacje")
+    time.sleep(10)
