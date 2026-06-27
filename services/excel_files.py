@@ -13,3 +13,12 @@ def save_file(data):
             new_df.to_excel(Config.WEATHER_FILE, index=False)
     except Exception as e:
         print(e)
+
+
+def read_file():
+    try:
+        df = pd.read_excel(Config.WEATHER_FILE)
+        return df
+    except:
+        print("Wystąpił błąd")
+
